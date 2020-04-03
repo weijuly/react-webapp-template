@@ -1,5 +1,5 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import PageLayout from "./components/PageLayout"
+import React from 'react'
+import ReactDOM from 'react-dom'
+import PageLayout from './components/PageLayout'
 
-ReactDOM.render(<PageLayout />, document.getElementById("root"))
+ReactDOM.render(<PageLayout />, document.getElementById('root'))

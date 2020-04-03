@@ -1,9 +1,12 @@
 {
-  "name": "react-express",
+  "name": "react-webapp-template",
   "version": "0.0.1",
   "main": "server.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js --mode production"
+    "build-react": "webpack --config webpack.config.js --mode production",
+    "build-typescript": "tsc",
+    "build": "npm run build-react && npm run build-typescript",
+    "lint": "eslint server.ts"
   },
   "dependencies": {
     "@babel/core": "^7.8.6",
@@ -16,8 +19,20 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
+    "typescript": "^3.8.3",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/node": "^13.11.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-standard": "^4.0.1"
+  }
 }
