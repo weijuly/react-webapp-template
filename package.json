@@ -1,12 +1,14 @@
 {
   "name": "react-webapp-template",
   "version": "0.0.1",
-  "main": "server.js",
   "scripts": {
-    "build-react": "webpack --config webpack.config.js --mode production",
-    "build-typescript": "tsc",
-    "build": "npm run build-react && npm run build-typescript",
-    "lint": "eslint server.ts"
+    "clean": "rm -rf build public/bundle.js",
+    "lint": "eslint *.ts './src/**/*.{ts,tsx}'",
+    "compile": "tsc",
+    "pack": "webpack --config webpack.config.js --mode production",
+    "build": "npm run lint && npm run clean && npm run compile && npm run pack",
+    "start": "node build/index.js",
+    "test": "jest --detectOpenHandles"
   },
   "dependencies": {
     "@babel/core": "^7.8.6",
@@ -19,20 +21,27 @@
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.5",
-    "typescript": "^3.8.3",
     "webpack": "^4.41.6",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/jest": "^25.2.1",
     "@types/node": "^13.11.0",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^25.2.7",
+    "regenerator-runtime": "^0.13.5",
+    "supertest": "^4.0.2",
+    "typescript": "^3.8.3"
   }
 }

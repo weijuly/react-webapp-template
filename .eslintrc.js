@@ -2,7 +2,8 @@ module.exports = {
     "env": {
         "browser": true,
         "es6": true,
-        "node": true
+        "node": true,
+        "jest/globals": true
     },
     "extends": [
         "plugin:react/recommended",
@@ -23,11 +24,13 @@ module.exports = {
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "jest"
     ],
     "rules": {
-        "indent": 2,
-        '@typescript-eslint/no-var-requires': 0
+        "indent": ["error", 4],
+        "@typescript-eslint/no-var-requires": 0,
+        "@typescript-eslint/indent": ["error", 4]
     },
     "settings": {
         "react": {
