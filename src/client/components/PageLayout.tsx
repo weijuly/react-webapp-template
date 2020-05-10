@@ -1,5 +1,14 @@
+import NavBar from './NavBar'
+import PageContent from './PageContent'
 const React = require('react')
 
-const PageLayout = () => (<h1>this is nuts</h1>)
+const PageLayout = () => {
+    return (
+        <div>
+            <NavBar />
+            <PageContent />
+        </div>
+    )
+}
 
 export default PageLayout
