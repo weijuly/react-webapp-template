@@ -26,6 +26,8 @@ module.exports = {
         extensions: ['.js', '.jsx', '.json']
     },
     performance: {
-        hints: 'warning'
+        hints: 'warning',
+        maxEntrypointSize: 1048576,
+        maxAssetSize: 1048576
     }
 }

@@ -1,13 +1,22 @@
 import Button from 'react-bootstrap/Button'
-const React = require('react')
+import { connect } from 'react-redux'
 
-const PageContent = () => {
+const React = require('react')
+const PropTypes = require('prop-types')
+
+const PageContent = ({ page }) => {
     return (
         <div className="container">
-            <h1><small>welcome to </small>project-title</h1>
+            <h1><small>welcome to </small>{page.title}</h1>
             <Button variant='primary'>button</Button>
         </div>
     )
 }
 
-export default PageContent
+PageContent.propTypes = {
+    page: PropTypes.object.isRequired
+}
+
+const mapStateToProps = (state) => ({ page: state.page })
+
+export default connect(mapStateToProps)(PageContent)
