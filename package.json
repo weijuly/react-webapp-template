@@ -6,9 +6,9 @@
     "lint": "eslint *.ts './src/**/*.{ts,tsx}'",
     "compile": "tsc",
     "pack": "webpack --config webpack.config.js --mode production",
-    "build": "npm run lint && npm run clean && npm run compile && npm run pack",
+    "build": "npm run test && npm run clean && npm run compile && npm run pack",
     "start": "node build/index.js",
-    "test": "jest --detectOpenHandles"
+    "test": "npm run lint && jest --detectOpenHandles"
   },
   "dependencies": {
     "@babel/core": "^7.8.6",
@@ -16,6 +16,7 @@
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
     "express": "^4.17.1",
+    "mongodb": "^3.5.5",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-redux": "^7.2.0",
@@ -27,8 +28,12 @@
   },
   "devDependencies": {
     "@babel/preset-typescript": "^7.9.0",
+    "@testing-library/jest-dom": "^5.3.0",
+    "@testing-library/react": "^10.0.2",
     "@types/jest": "^25.2.1",
     "@types/node": "^13.11.0",
+    "@types/react": "^16.9.31",
+    "@types/react-dom": "^16.9.5",
     "@typescript-eslint/eslint-plugin": "^2.26.0",
     "@typescript-eslint/parser": "^2.26.0",
     "eslint": "^6.8.0",
@@ -40,6 +45,8 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
     "jest": "^25.2.7",
+    "jest-diff": "^25.2.6",
+    "pretty-format": "^25.2.6",
     "regenerator-runtime": "^0.13.5",
     "supertest": "^4.0.2",
     "typescript": "^3.8.3"
